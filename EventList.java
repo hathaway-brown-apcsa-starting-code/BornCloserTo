@@ -42,4 +42,20 @@ public class EventList
         }
         input.close();
     }
+
+    public static void main(String [] args)
+    {
+        EventList ev = new EventList();
+        
+        Scanner scanner = new Scanner(System.in); 
+        System.out.println("Enter your birthday year "); 
+        int targetYear =  scanner.nextInt();
+        for (Event e : herstory)
+        { 
+            if ((targetYear - e.getYear()) < (currentYear - targetYear)) 
+            {
+                 System.out.println("You were born closer to" + e.getName() + "than 2026!" + "This event happened in" + e.getYear() + "!"); 
+            }
+        }
+    }
 }
